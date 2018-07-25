@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
+    <%--<base href="<%=basePath%>">--%>
     
     <title>My JSP 'success.jsp' starting page</title>
   	<meta http-equiv="pragma" content="no-cache">
@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <div style="text-align: center;">
-      <img src="resources/images/add_cart_success.jpg"/>
+      <img src="../resources/images/add_cart_success.jpg"/>
       <hr>
       <% 
          String id = request.getParameter("id");

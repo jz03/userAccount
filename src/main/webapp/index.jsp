@@ -1,6 +1,4 @@
-<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8"%>
-<%@ page import="com.jz.account.dto.Items"%>
-<%@ page import="com.jz.account.service.ItemsDAO"%>
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=utf-8" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
+    <%--<base href="<%=basePath%>">--%>
     
     <title>My JSP 'index.jsp' starting page</title>
 	<meta http-equiv="pragma" content="no-cache">
@@ -20,66 +18,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<style type="text/css">
-	   hr{
-	    border-color:FF7F00; 
-	   }
-	   div{
-	      float:left;
-	      margin: 10px;
-	   }
-	   div dd{
-	      margin:0px;
-	      font-size:10pt;
-	   }
-	   div dd.dd_name
-	   {
-	      color:blue;
-	   }
-	   div dd.dd_city
-	   {
-	      color:#000;
-	   }
-	</style>
   </head>
   
   <body>
-    <h1>商品展示</h1>
+    <h1>项目案例</h1>
     <hr>
-  
-    <div style="text-align: center;">
-    <table width="750" height="60" cellpadding="0" cellspacing="0" border="0">
-      <tr>
-        <td>
-          
-          <!-- 商品循环开始 -->
-           <% 
-               ItemsDAO itemsDao = new ItemsDAO(); 
-               ArrayList<Items> list = itemsDao.getAllItems();
-               if(list!=null&&list.size()>0)
-               {
-	               for(int i=0;i<list.size();i++)
-	               {
-	                  Items item = list.get(i);
-           %>   
-          <div>
-             <dl>
-               <dt>
-                 <a href="details.jsp?id=<%=item.getId()%>"><img src="resources/images/<%=item.getPicture()%>" width="120" height="90" border="1"/></a>
-               </dt>
-               <dd class="dd_name"><%=item.getName() %></dd> 
-               <dd class="dd_city">产地:<%=item.getCity() %>&nbsp;&nbsp;价格:￥ <%=item.getPrice() %></dd> 
-             </dl>
-          </div>
-          <!-- 商品循环结束 -->
-        
-          <%
-                   }
-              } 
-          %>
-        </td>
-      </tr>
-    </table>
-    </div>
+    <ul>
+        <li><a href="goods/goods.jsp">商品购物车</a></li>
+        <li><a href="file/upload.jsp">上传文件</a></li>
+        <li><a href="TomcatTest/Refresh">页面自动刷新</a></li>
+        <li><a href="Email/sendEmail.jsp">发送邮件</a></li>
+    </ul>
   </body>
 </html>

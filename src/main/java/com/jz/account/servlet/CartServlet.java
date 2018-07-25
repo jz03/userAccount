@@ -15,8 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class CartServlet extends HttpServlet {
 
-	private String action ; //��ʾ���ﳵ�Ķ��� ,add,show,delete
-	//��Ʒҵ���߼���Ķ���
+	private String action ;
 	private ItemsDAO idao = new ItemsDAO();
 	
 	
@@ -68,30 +67,30 @@ public class CartServlet extends HttpServlet {
 		if(request.getParameter("action")!=null)
 		{
 			this.action = request.getParameter("action");
-			if(action.equals("add")) //����������Ʒ�����ﳵ
+			if(action.equals("add"))
 			{
 				if(addToCart(request,response))
 				{
-					request.getRequestDispatcher("/success.jsp").forward(request, response);
+					request.getRequestDispatcher("/goods/success.jsp").forward(request, response);
 				}
 				else
 				{
-					request.getRequestDispatcher("/failure.jsp").forward(request, response);
+					request.getRequestDispatcher("/goods/failure.jsp").forward(request, response);
 				}
 			}
-			if(action.equals("show"))//�������ʾ���ﳵ
+			if(action.equals("show"))
 			{
-				request.getRequestDispatcher("/cart.jsp").forward(request, response);
+				request.getRequestDispatcher("/goods/cart.jsp").forward(request, response);
 			}
-			if(action.equals("delete")) //�����ִ��ɾ�����ﳵ�е���Ʒ
+			if(action.equals("delete"))
 			{
 				if(deleteFromCart(request,response))
 				{
-					request.getRequestDispatcher("/cart.jsp").forward(request, response);
+					request.getRequestDispatcher("/goods/cart.jsp").forward(request, response);
 				}
 				else
 				{
-					request.getRequestDispatcher("/cart.jsp").forward(request, response);
+					request.getRequestDispatcher("/goods/cart.jsp").forward(request, response);
 				}
 			}
 		}

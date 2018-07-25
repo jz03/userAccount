@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
+    <%--<base href="<%=basePath%>">--%>
     
     <title>My JSP 'details.jsp' starting page</title>
     
@@ -21,9 +21,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<link href="resources/css/main.css" rel="stylesheet" type="text/css">
-	<script type="text/javascript" src="resources/js/lhgcore.js"></script>
-    <script type="text/javascript" src="resources/js/lhgdialog.js"></script>
+	<link href="../resources/css/main.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../resources/js/lhgcore.js"></script>
+    <script type="text/javascript" src="../resources/js/lhgdialog.js"></script>
     <script type="text/javascript">
       function selflog_show(id)
       { 
@@ -91,9 +91,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <h1>商品详情</h1>
-    <a href="index.jsp">首页</a> >> <a href="index.jsp">商品列表</a>
+    <a href="./goods.jsp">首页</a> >> <a href="./goods.jsp">商品列表</a>
     <hr>
-    <div style="text-align: center;">
+    <center>
       <table width="750" height="60" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <!-- 商品详情 -->
@@ -106,7 +106,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           <td width="70%" valign="top">
              <table>
                <tr>
-                 <td rowspan="5"><img src="resources/images/<%=item.getPicture()%>" width="200" height="160"/></td>
+                 <td rowspan="5"><img src="../resources/images/<%=item.getPicture()%>" width="200" height="160"/></td>
                </tr>
                <tr>
                  <td><B><%=item.getName() %></B></td> 
@@ -122,9 +122,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                </tr> 
              </table>
              <div id="cart">
-                 <img src="resources/images/buy_now.png">
-                 <a href="javascript:selflog_show(<%=item.getId()%>)"><img src="resources/images/in_cart.png"></a>
-                 <a href="servlet/CartServlet?action=show"><img src="resources/images/view_cart.jpg"/></a>
+                 <img src="../resources/images/buy_now.png">
+                 <a href="javascript:selflog_show(<%=item.getId()%>)"><img src="../resources/images/in_cart.png"></a>
+                 <a href="../servlet/CartServlet?action=show"><img src="../resources/images/view_cart.jpg"/></a>
              </div>
           </td>
           <% 
@@ -177,7 +177,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
              <div>
              <dl>
                <dt>
-                 <a href="details.jsp?id=<%=i.getId()%>"><img src="resources/images/<%=i.getPicture() %>" width="120" height="90" border="1"/></a>
+                 <a href="details.jsp?id=<%=i.getId()%>"><img src="../resources/images/<%=i.getPicture() %>" width="120" height="90" border="1"/></a>
                </dt>
                <dd class="dd_name"><%=i.getName() %></dd> 
                <dd class="dd_city">产地:<%=i.getCity() %>&nbsp;&nbsp;价格:<%=i.getPrice() %> ￥ </dd> 
@@ -191,6 +191,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </td>
         </tr>
       </table>
-    </div>
+    </center>
   </body>
 </html>

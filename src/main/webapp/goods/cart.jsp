@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>">
+    <%--<base href="<%=basePath%>">--%>
     <title>My JSP 'cart.jsp' starting page</title>
  	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,7 +19,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-    <link type="text/css" rel="stylesheet" href="resources/css/style1.css" />
+    <link type="text/css" rel="stylesheet" href="../resources/css/style1.css" />
     <script language="javascript">
 	    function delcfm() {
 	        if (!confirm("确认要删除？")) {
@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
    <h1>我的购物车</h1>
-   <a href="index.jsp">首页</a> >> <a href="index.jsp">商品列表</a>
+   <a href="/goods/goods.jsp">首页</a> >> <a href="/goods/goods.jsp">商品列表</a>
    <hr> 
    <div id="shopping">
    <form action="" method="">		
@@ -60,7 +60,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				            Items i = it.next();
 				     %> 
 				<tr name="products" id="product_id_1">
-					<td class="thumb"><img src="resources/images/<%=i.getPicture()%>" /><a href=""><%=i.getName()%></a></td>
+					<td class="thumb"><img src="../resources/images/<%=i.getPicture()%>" /><a href=""><%=i.getName()%></a></td>
 					<td class="number"><%=i.getPrice() %></td>
 					<td class="price" id="price_id_1">
 						<span><%=i.getPrice()*goods.get(i) %></span>
