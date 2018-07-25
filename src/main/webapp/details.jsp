@@ -93,7 +93,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <h1>商品详情</h1>
     <a href="index.jsp">首页</a> >> <a href="index.jsp">商品列表</a>
     <hr>
-    <center>
+    <div style="text-align: center;">
       <table width="750" height="60" cellpadding="0" cellspacing="0" border="0">
         <tr>
           <!-- 商品详情 -->
@@ -122,7 +122,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                </tr> 
              </table>
              <div id="cart">
-               <img src="resources/images/buy_now.png"><a href="javascript:selflog_show(<%=item.getId()%>)"><img src="resources/images/in_cart.png"></a><a href="servlet/CartServlet?action=show"><img src="resources/images/view_cart.jpg"/></a>
+                 <img src="resources/images/buy_now.png">
+                 <a href="javascript:selflog_show(<%=item.getId()%>)"><img src="resources/images/in_cart.png"></a>
+                 <a href="servlet/CartServlet?action=show"><img src="resources/images/view_cart.jpg"/></a>
              </div>
           </td>
           <% 
@@ -189,6 +191,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
           </td>
         </tr>
       </table>
-    </center>
+    </div>
   </body>
 </html>

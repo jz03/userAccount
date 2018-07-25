@@ -98,14 +98,14 @@ public class CartServlet extends HttpServlet {
 		
 	}
 
-	//�����Ʒ�����ﳵ�ķ���
+	//添加商品进购物车的方法
 	private boolean addToCart(HttpServletRequest request, HttpServletResponse response)
 	{
 		String id = request.getParameter("id");
 		String number = request.getParameter("num");
 		Items item = idao.getItemsById(Integer.parseInt(id));
 		
-		//�Ƿ��ǵ�һ�θ����ﳵ�����Ʒ,��Ҫ��session�д���һ���µĹ��ﳵ����
+		//是否是第一次给购物车添加商品,需要给session中创建一个新的购物车对象
 		if(request.getSession().getAttribute("cart")==null)
 		{
 			Cart cart = new Cart();
@@ -123,7 +123,7 @@ public class CartServlet extends HttpServlet {
 		
 	}
 	
-	//�ӹ��ﳵ��ɾ����Ʒ
+	//从购物车中删除商品
 	private boolean deleteFromCart(HttpServletRequest request, HttpServletResponse response)
 	{
 		String id = request.getParameter("id");
